@@ -1,0 +1,14 @@
+applications:
+- path: .
+  memory: 512M
+  instances: 1
+  domain: mybluemix.net
+  name: capProvisions
+  host: capProvisions
+  disk_quota: 1024M
+  services:
+  - DashDB
+  - CAP
+  - cloudantNoSQLDB
+  env:
+    NODE_RED_STORAGE_NAME: cloudantNoSQLDB
