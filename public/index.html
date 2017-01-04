@@ -12,6 +12,10 @@
 
 <script>
 $(document).ready(function() {
+	$.get("/stats", function(data) {   
+           $('#stats').append(data);
+        });
+	
     $('#example').DataTable( {
         "ajax": "/cap",
         "columns": [
@@ -32,7 +36,7 @@ $(document).ready(function() {
 </script>
 </head>
 <body>
-
+	<div id="stats"></div>
 <table id="example" class="display" cellspacing="0" width="100%">
         <thead>
             <tr>
