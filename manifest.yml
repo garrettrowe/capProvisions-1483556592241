@@ -8,7 +8,4 @@ applications:
   disk_quota: 1024M
   services:
   - DashDB
-  - CAP
-  - cloudantNoSQLDB
-  env:
-    NODE_RED_STORAGE_NAME: cloudantNoSQLDB
+  - capProvisions-cloudantNoSQLDB
