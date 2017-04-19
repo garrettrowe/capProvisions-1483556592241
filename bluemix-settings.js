@@ -23,22 +23,7 @@ var appEnv = cfenv.getAppEnv();
 var VCAP_APPLICATION = JSON.parse(process.env.VCAP_APPLICATION);
 var VCAP_SERVICES = JSON.parse(process.env.VCAP_SERVICES);
 
-var sp_options = {
-  entity_id: "https://capprovisions.mybluemix.net:443/metadata.xml",
-  private_key: fs.readFileSync("cert/key.pem").toString(),
-  certificate: fs.readFileSync("cert/cert.pem").toString(),
-  assert_endpoint: "https://capprovisions.mybluemix.net:443/assert"
-};
-var sp = new saml2.ServiceProvider(sp_options);
 
-//
-
-var idp_options = {
-  sso_login_url: "https://w3id.sso.ibm.com/auth/sps/samlidp/saml20/logininitial?RequestBinding=HTTPPost&PartnerId=https://capprovisions.mybluemix.net:443/metadata.xml&NameIdFormat=email&Target=https://capprovisions.mybluemix.net.w3ibm.mybluemix.net:443/assert",
- 
-
-  certificates: fs.readFileSync("cert/w3id.sso.ibm.com").toString()
-};
 
 var settings = module.exports = {
     uiPort: process.env.VCAP_APP_PORT || 1880,
