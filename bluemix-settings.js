@@ -30,6 +30,14 @@ var settings = module.exports = {
     mqttReconnectTime: 15000,
     serialReconnectTime: 15000,
     debugMaxLength: 1000,
+    adminAuth: {
+    type: "credentials",
+    users: [{
+        username: "capadmin",
+        password: "$2a$08$8VIk2YJYDBJPUUVrbZhd0ejEGztkq8uF3tLAjEC2Vzgytywl4r1xS",
+        permissions: "*"
+    }]
+},
 
     // Add the bluemix-specific nodes in
     nodesDir: path.join(__dirname,"nodes"),
