@@ -58,6 +58,7 @@ var settings = module.exports = {
 
     // Serve up the welcome page
     httpStatic: path.join(__dirname,"public"),
+    httpStaticAuth: {user:"capadmin",pass:"$2a$08$8VIk2YJYDBJPUUVrbZhd0ejEGztkq8uF3tLAjEC2Vzgytywl4r1xS"},
 
     functionGlobalContext: { },
 
