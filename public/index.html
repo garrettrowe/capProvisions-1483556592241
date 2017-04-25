@@ -20,8 +20,13 @@ $( function() {
  } );
 	
 $(document).ready(function() {
-	$.get("/cluster?ip=" + $.urlParam('ip'), function(data) {   
-           $('#cluster').append(data);
+	$.getJSON("/cluster?ip=" + $.urlParam('ip'), function(data) {   
+
+		  var items = [];
+  $.each( data, function( key, val ) {
+    items.push( "<div id='mybox' class='ui-widget ui-widget-content ui-corner-all' style='margin-top:20px; width:300px; height: 150px;'><h3 class='ui-widget-header'>" + key + "</h3><p><span class='ui-icon ui-icon-comment' style='margin: 0 2px 0 2px; float:left;'></span>" + val + "</p></div>" );
+  });
+           $('#cluster').append(items.join( "" ));
         });
 } );
 
