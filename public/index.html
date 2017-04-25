@@ -12,10 +12,9 @@
 	<link href="https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css" rel="stylesheet">
 	
 <script>
-function getSearchParams(k){
- var p={};
- location.search.replace(/[?&]+([^=&]+)=([^&]*)/gi,function(s,k,v){p[k]=v});
- return k?p[k]:p;
+$.urlParam = function(name){
+	var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
+	return results[1] || 0;
 }
 	
 $( function() {
@@ -23,7 +22,7 @@ $( function() {
  } );
 	
 $(document).ready(function() {
-	$.get("/cluster?ip=" & getSearchParams('ip'), function(data) {   
+	$.get("/cluster?ip=" + $.urlParam('ip');, function(data) {   
            $('#cluster').append(data);
         });
 } );
