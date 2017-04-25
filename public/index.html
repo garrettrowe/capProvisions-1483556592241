@@ -8,8 +8,6 @@
   <script src="HTTPS://code.jquery.com/jquery-1.12.3.js"></script>
 	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-	<script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
-	<link href="https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css" rel="stylesheet">
 	
 <script>
 $.urlParam = function(name){
@@ -22,7 +20,7 @@ $( function() {
  } );
 	
 $(document).ready(function() {
-	$.get("/cluster?ip=" + $.urlParam('ip');, function(data) {   
+	$.get("/cluster?ip=" + $.urlParam('ip'), function(data) {   
            $('#cluster').append(data);
         });
 } );
