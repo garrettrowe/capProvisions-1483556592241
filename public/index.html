@@ -14,7 +14,7 @@
 <script>
 function getSearchParams(k){
  var p={};
- location.search.replace(/[?&]+([^=&]+)=([^&]*)/gi,function(s,k,v){p[k]=v})
+ location.search.replace(/[?&]+([^=&]+)=([^&]*)/gi,function(s,k,v){p[k]=v});
  return k?p[k]:p;
 }
 	
@@ -23,7 +23,7 @@ $( function() {
  } );
 	
 $(document).ready(function() {
-	$.get("/cluster?ip=" & getSearchParams("ip"), function(data) {   
+	$.get("/cluster?ip=" & getSearchParams('ip'), function(data) {   
            $('#cluster').append(data);
         });
 } );
