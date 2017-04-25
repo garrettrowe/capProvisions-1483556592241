@@ -1,1 +1,77 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Provisions</title>
 
+  <script src="HTTPS://code.jquery.com/jquery-1.12.3.js"></script>
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
+	<link href="https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css" rel="stylesheet">
+	
+<script>
+$( function() {
+    $( "#tabs" ).tabs();
+ } );
+	
+$(document).ready(function() {
+	$.get("/stats", function(data) {   
+           $('#stats').append(data);
+        });
+	
+    $('#example').DataTable( {
+        "ajax": "/cap",
+        "columns": [
+            { "data": "date" },
+            { "data": "localization" },
+            { "data": "ips" },
+            { "data": "SVersion" },
+	    { "data": "datacenter" },
+	    { "data": "userhost" },
+            { "data": "_id" }
+        ]
+    } );
+} );
+
+</script>
+</head>
+<body>
+	<div id="tabs">
+  <ul>
+    <li><a href="#tabs-1">CAP Statistics</a></li>
+    <li><a href="#tabs-2">CAP Instance Details</a></li>
+  </ul>
+  <div id="tabs-1">
+		<div id="stats"></div>
+	</div>
+  <div id="tabs-2">
+		<table id="example" class="display" cellspacing="0" width="100%">
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Market</th>
+                <th>IPs</th>
+                <th>Script Ver</th>
+		    <th>Data Center</th>
+				<th>User</th>
+				<th>TimeStamp</th>
+            </tr>
+        </thead>
+        <tfoot>
+            <tr>
+                <th>Date</th>
+                <th>Market</th>
+                <th>IPs</th>
+                <th>Script Ver</th>
+		    <th>Data Center</th>
+				<th>User</th>
+				<th>TimeStamp</th>
+            </tr>
+        </tfoot>
+    </table>
+	</div>
+</div>
+</body>
+</html>
