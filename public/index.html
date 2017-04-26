@@ -27,7 +27,7 @@ $(document).ready(function() {
 
 		  var items = [];
   $.each( data, function( key, val ) {
-    items.push( "<div id='mybox' class='ui-widget ui-widget-content ui-corner-all' style='float:left; margin-top:5px; width:300px; height: 150px;'><h3 class='ui-widget-header' style='margin-top:0px;'>" + key + "</h3><p>" + val.des + "</p><p>Passwords: " + val.passwords + "</p><p>" + val.link + "</p></div>" );
+    items.push( "<div id='mybox' class='ui-widget ui-widget-content ui-corner-all' style='float:left; margin:5px 5px 5px 5px; width:300px; height: 150px;'><h3 class='ui-widget-header' style='margin-top:0px;'>" + key + "</h3><p>" + val.des + "</p><p>Passwords: " + val.passwords + "</p><p>" + val.link + "</p></div>" );
   });
            $('#cluster').append(items.join( "" ));
         });
