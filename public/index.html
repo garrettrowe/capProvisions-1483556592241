@@ -16,7 +16,10 @@ $.urlParam = function(name){
 }
 	
 $( function() {
-    $( "#tabs" ).tabs();
+    $("#tabs").tabs().css({
+   'min-height': '400px',
+   'overflow': 'auto'
+});
  } );
 	
 $(document).ready(function() {
