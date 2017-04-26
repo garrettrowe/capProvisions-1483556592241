@@ -7,8 +7,8 @@
 
   <script src="HTTPS://code.jquery.com/jquery-1.12.3.js"></script>
 	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+	<link rel="stylesheet" href="/cssSheet">
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-	
 <script>
 $.urlParam = function(name){
 	var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
@@ -27,7 +27,7 @@ $(document).ready(function() {
 
 		  var items = [];
   $.each( data, function( key, val ) {
-    items.push( "<div id='mybox' class='ui-widget ui-widget-content ui-corner-all' style='float:left; margin:5px 5px 5px 5px; width:300px; height: 150px;'><h3 class='ui-widget-header' style='margin-top:0px;'>" + key + "</h3><p>" + val.des + "</p><p>Passwords: " + val.passwords + "</p><p>" + val.link + "</p></div>" );
+    items.push( "<div id='mybox"+key+"' class='mybox ui-widget ui-widget-content ui-corner-all'><h3 class='ui-widget-header' >" + key + "</h3><p>" + val.des + "</p><p>Passwords: " + val.passwords + "</p><p>" + val.link + "</p></div>" );
   });
            $('#cluster').append(items.join( "" ));
         });
