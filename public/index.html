@@ -23,20 +23,20 @@ $( function() {
  } );
 	
 $(document).ready(function() {
-	$.getJSON("/cluster?ip=" + $.urlParam('ip'), function(data) {   
+	$.getJSON("/cluster?key=" + $.urlParam('key'), function(data) {   
 		var items = [];
   		$.each( data, function( key, val ) {
     			items.push( "<div id='mybox"+key+"' class='mybox ui-widget ui-widget-content ui-corner-all'><h3 class='ui-widget-header' >" + key + "</h3><p>" + val.des + "</p><p>Passwords: " + val.passwords + "</p><p>" + val.link + "</p></div>" );
   		});
            	$('#cluster').append(items.join( "" ));
         });
-	$.get("/documentation?ip=" + $.urlParam('ip'), function(data) {   
+	$.get("/documentation?key=" + $.urlParam('key'), function(data) {   
            	$('#documentation').append(data);
         });
-	$.get("/demos?ip=" + $.urlParam('ip'), function(data) {   
+	$.get("/demos?key=" + $.urlParam('key'), function(data) {   
            	$('#demos').append(data);
         });
-	$.get("/blog?ip=" + $.urlParam('ip'), function(data) {   
+	$.get("/blog?key=" + $.urlParam('key'), function(data) {   
            	$('#demos').append(data);
         });
 } );
