@@ -24,12 +24,20 @@ $( function() {
 	
 $(document).ready(function() {
 	$.getJSON("/cluster?ip=" + $.urlParam('ip'), function(data) {   
-
-		  var items = [];
-  $.each( data, function( key, val ) {
-    items.push( "<div id='mybox"+key+"' class='mybox ui-widget ui-widget-content ui-corner-all'><h3 class='ui-widget-header' >" + key + "</h3><p>" + val.des + "</p><p>Passwords: " + val.passwords + "</p><p>" + val.link + "</p></div>" );
-  });
-           $('#cluster').append(items.join( "" ));
+		var items = [];
+  		$.each( data, function( key, val ) {
+    			items.push( "<div id='mybox"+key+"' class='mybox ui-widget ui-widget-content ui-corner-all'><h3 class='ui-widget-header' >" + key + "</h3><p>" + val.des + "</p><p>Passwords: " + val.passwords + "</p><p>" + val.link + "</p></div>" );
+  		});
+           	$('#cluster').append(items.join( "" ));
+        });
+	$.get("/documentation?ip=" + $.urlParam('ip'), function(data) {   
+           	$('#documentation').append(data);
+        });
+	$.get("/demos?ip=" + $.urlParam('ip'), function(data) {   
+           	$('#demos').append(data);
+        });
+	$.get("/blog?ip=" + $.urlParam('ip'), function(data) {   
+           	$('#demos').append(data);
         });
 } );
 
@@ -40,15 +48,13 @@ $(document).ready(function() {
   <ul>
     <li><a href="#tabs-1">Your CAP Cluster</a></li>
     <li><a href="#tabs-2">Documentation</a></li>
-    <li><a href="#tabs-3">Demos</a></li>
+    <li><a href="#tabs-3">Demo Source Materials</a></li>
+    <li><a href="#tabs-3">Demo Blogs & Videos</a></li>
   </ul>
   <div id="tabs-1"><div id="cluster"></div></div>
-  <div id="tabs-2"><div id="documentation">
-	  <iframe src="https://ibm.ent.box.com/embed/s/3nvmn5f4ficnnez6hk3jpzfi3nmmtd4f?sortColumn=date&view=list" width="800" height="550" frameborder="0"></iframe>
-	  </div></div>
-  <div id="tabs-3"><div id="demos">
-	  <iframe src="https://ibm.ent.box.com/embed/s/5ddn39y2t3pe9nnkdkpctos5fix3918t?sortColumn=date&view=list" width="800" height="550" frameborder="0"></iframe>
-	  </div></div>
+  <div id="tabs-2"><div id="documentation"></div></div>
+  <div id="tabs-3"><div id="demos"></div></div>
+  <div id="tabs-3"><div id="blog"></div></div>
 </div>
 </body>
 </html>
