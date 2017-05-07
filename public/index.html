@@ -26,7 +26,7 @@ $(document).ready(function() {
 	$.getJSON("/cluster?key=" + $.urlParam('key'), function(data) {   
 		var items = [];
   		$.each( data, function( key, val ) {
-    			items.push( "<div id='mybox"+key+"' class='mybox ui-widget ui-widget-content ui-corner-all'><h3 class='ui-widget-header' >" + key + "</h3><p>" + val.des + "</p><p><div class='passwords'><img width ='30px' height = '30px' src='/images/account.png'></div>" + val.passwords + "</p><p>" + val.link + "</p></div>" );
+    			items.push( "<div id='mybox"+key+"' class='mybox ui-widget ui-widget-content ui-corner-all'><h3 class='ui-widget-header' >" + key + "</h3><p>" + val.des + "</p><p>" + val.version + "</p><p><div class='passwords'><img width ='30px' height = '30px' src='/images/account.png'></div>" + val.passwords + "</p><p>" + val.link + "</p></div>" );
   		});
            	$('#cluster').append(items.join( "" ));
         });
