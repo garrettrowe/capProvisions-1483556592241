@@ -39,6 +39,12 @@ $(document).ready(function() {
 	$.get("/blog?key=" + $.urlParam('key'), function(data) {   
            	$('#blog').append(data);
         });
+	$.get("/log?key=" + $.urlParam('key'), function(data) {   
+           	$('#log').append(data);
+        });
+	$.get("/help?key=" + $.urlParam('key'), function(data) {   
+           	$('#help').append(data);
+        });
 } );
 
 </script>
@@ -50,13 +56,15 @@ $(document).ready(function() {
     <li><a href="#tabs-2">Docs</a></li>
     <li><a href="#tabs-3">Demos</a></li>
     <li><a href="#tabs-4">Videos</a></li>
-    <li><a href="#tabs-5">Log</a></li>
+    <li><a href="#tabs-5">Logs</a></li>
+	  <li><a href="#tabs-6">Help</a></li>
   </ul>
   <div id="tabs-1"><div id="cluster"></div></div>
   <div id="tabs-2"><div id="documentation"></div></div>
   <div id="tabs-3"><div id="demos"></div></div>
   <div id="tabs-4"><div id="blog"></div></div>
   <div id="tabs-5"><div id="log"></div></div>
+	<div id="tabs-6"><div id="help"></div></div>
 </div>
 </body>
 </html>
