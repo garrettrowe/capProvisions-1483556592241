@@ -45,9 +45,6 @@ $(document).ready(function() {
 	$.get("/help?key=" + $.urlParam('key'), function(data) {   
            	$('#help').append(data);
         });
-	$.get("/clusters?key=" + $.urlParam('key'), function(data) {   
-           	$('#clusters').append(data);
-        });
 } );
 
 </script>
@@ -61,7 +58,6 @@ $(document).ready(function() {
     <li><a href="#tabs-4">Videos</a></li>
     <li><a href="#tabs-5">Logs</a></li>
 	  <li><a href="#tabs-6">Help</a></li>
-	  <li><a href="#tabs-7">Clusters</a></li>
   </ul>
   <div id="tabs-1"><div id="cluster"></div></div>
   <div id="tabs-2"><div id="documentation"></div></div>
@@ -69,7 +65,6 @@ $(document).ready(function() {
   <div id="tabs-4"><div id="blog"></div></div>
   <div id="tabs-5"><div id="log"></div></div>
 	<div id="tabs-6"><div id="help"></div></div>
-	<div id="tabs-7"><div id="clusters"></div></div>
 </div>
 </body>
 </html>
