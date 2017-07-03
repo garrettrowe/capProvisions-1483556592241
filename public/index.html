@@ -12,10 +12,7 @@
 <script>
 $.urlParam = function(name){
 	var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
-	if (typeof results[1] === 'undefined')
-		return "";
-	else 
-		return results[1];
+	return (results == null) ? "" : results[1];
 }
 	
 $( function() {
