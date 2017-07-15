@@ -15,7 +15,7 @@
 	
 	<script>
 $( function() {
-    $( "#tabs" ).tabs({ "selected": 1 });
+    $( "#tabs" ).tabs({ "selected": 2 });
  } );
 	
 $(document).ready(function() {
@@ -25,7 +25,7 @@ $(document).ready(function() {
 	
     $('#example').DataTable( {
 	    "dom": 'Bfrtip',
-	    "buttons": ['copy','excel' 'pdf'],
+	    "buttons": ['copy','excel', 'pdf'],
 	"order": [[ 0, "desc" ]],
         "ajax": "/cap",
         "columns": [
