@@ -3,7 +3,7 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Provisions</title>
+	<title>CAP Clusters</title>
 	
   	<script src="HTTPS://code.jquery.com/jquery-1.12.3.js"></script>
 	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
@@ -15,7 +15,7 @@
 	
 	<script>
 $( function() {
-    $( "#tabs" ).tabs({ selected: 1 });
+    $( "#tabs" ).tabs({ "selected": 1 });
  } );
 	
 $(document).ready(function() {
@@ -30,7 +30,6 @@ $(document).ready(function() {
         "ajax": "/cap",
         "columns": [
             { "data": "date" },
-            { "data": "localization" },
             { "data": "ips" },
 		{ "data": "intips" },
             { "data": "SVersion" },
@@ -55,7 +54,6 @@ $(document).ready(function() {
         <thead>
             <tr>
                 <th>Date</th>
-                <th>Market</th>
                 <th>External IPs</th>
 		<th>Internal IPs</th>
                 <th>Script Ver</th>
@@ -65,7 +63,6 @@ $(document).ready(function() {
         <tfoot>
             <tr>
                 <th>Date</th>
-                <th>Market</th>
                 <th>External IPs</th>
 		<th>Internal IPs</th>
                 <th>Script Ver</th>
