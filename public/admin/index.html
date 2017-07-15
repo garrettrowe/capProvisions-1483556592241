@@ -22,16 +22,16 @@ $(document).ready(function() {
         });
 	
     $('#example').DataTable( {
-	"order": [[ 6, "desc" ]],
+	    buttons: ['copy', 'excel', 'pdf'],
+	"order": [[ 1, "desc" ]],
         "ajax": "/cap",
         "columns": [
             { "data": "date" },
             { "data": "localization" },
             { "data": "ips" },
+		{ "data": "intips" },
             { "data": "SVersion" },
-	    { "data": "datacenter" },
-	    { "data": "userhost" },
-            { "data": "_id" }
+	    { "data": "userhost" }
         ]
     } );
 } );
@@ -53,22 +53,20 @@ $(document).ready(function() {
             <tr>
                 <th>Date</th>
                 <th>Market</th>
-                <th>IPs</th>
+                <th>External IPs</th>
+		<th>Internal IPs</th>
                 <th>Script Ver</th>
-		    <th>Data Center</th>
-				<th>User</th>
-				<th>TimeStamp</th>
+		<th>User</th>
             </tr>
         </thead>
         <tfoot>
             <tr>
                 <th>Date</th>
                 <th>Market</th>
-                <th>IPs</th>
+                <th>External IPs</th>
+		<th>Internal IPs</th>
                 <th>Script Ver</th>
-		    <th>Data Center</th>
-				<th>User</th>
-				<th>TimeStamp</th>
+		<th>User</th>
             </tr>
         </tfoot>
     </table>
