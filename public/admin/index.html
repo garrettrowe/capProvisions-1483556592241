@@ -33,7 +33,7 @@ $(document).ready(function() {
 	    "dom": 'Bfrtip',
 	    "buttons": ['copy','excel', 'pdf'],
 	"order": [[ 0, "desc" ]],
-        "ajax": "/cap?u=" + $.urlParam('user'),
+        "ajax": "/cap?u=" + $.urlParam('u'),
         "columns": [
             { "data": "date" },
             { "data": "ips" },
@@ -47,7 +47,7 @@ $(document).ready(function() {
 </script>
 </head>
 <body>
-<div id="tabs-2">
+<div id="tabs">
 		<table id="example" class="display" cellspacing="0" width="100%">
         <thead>
             <tr>
