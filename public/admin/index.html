@@ -3,7 +3,6 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>CAP Clusters</title>
 	
   	<script src="HTTPS://code.jquery.com/jquery-1.12.3.js"></script>
 	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
@@ -30,7 +29,8 @@ $(document).ready(function() {
 	
     $('#example').DataTable( {
 	    "dom": 'Bfrtip',
-	    "buttons": ['copy','excel', 'pdf'],
+	    "buttons": ['excel', 'pdf',{ extend: 'excel', 'fnCellRender': function ( sValue, iColumn, nTr, iDataIndex ) {
+            return sValue.replace(/<br\s*\/?>/ig, '\r\n') ;}}],
 	"order": [[ 0, "desc" ]],
         "ajax": "/cap?key=" + $.urlParam('key'),
         "columns": [
