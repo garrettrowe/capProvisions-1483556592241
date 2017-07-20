@@ -29,8 +29,8 @@ $(document).ready(function() {
 	
     $('#example').DataTable( {
 	    "dom": 'Bfrtip',
-	    "buttons": ['excel', 'pdf',{ extend: 'excel', 'fnCellRender': function ( sValue, iColumn, nTr, iDataIndex ) {
-            return sValue.replace(/<br\s*\/?>/ig, '\r\n') ;}}],
+	    "buttons": ['pdf',{ extend: 'excel', 'fnCellRender': function ( sValue, iColumn, nTr, iDataIndex ) {
+            return '"' + sValue.replace(/<br\s*\/?>/ig, "\r\n") + '"';}}],
 	"order": [[ 0, "desc" ]],
         "ajax": "/cap?key=" + $.urlParam('key'),
         "columns": [
